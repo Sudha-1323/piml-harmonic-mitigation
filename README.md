@@ -67,6 +67,23 @@ Environmental parameters were included to analyse the influence of microclimatic
 | `README.md` | Project documentation |
 
 ---
+## Code Information
+
+### AONRFS.m
+
+Implements the Auto-Optimized Neighbourhood Fuzzy Rough Set (AO-NFRS) algorithm used to evaluate feature relevance and rank electrical and environmental variables influencing harmonic distortion.
+
+### PIML_THD.m
+
+Implements the Physics-Informed Machine Learning (PIML) model for prediction of Total Harmonic Distortion (THD). The model integrates measured harmonic data with physics-based constraints derived from the THD formulation.
+
+### BOANFIS.m
+
+Implements Bayesian-Optimized Adaptive Neuro-Fuzzy Inference System (BO-ANFIS) training for generation of adaptive harmonic mitigation rules and filter control decisions.
+
+### RealTime_FilterSwitch_ANFIS.m
+
+Executes the adaptive filter switching framework and generates real-time decisions among OFF, APF, and HYBRID filtering modes based on predicted THD levels.
 
 ## Methodology
 
@@ -92,6 +109,17 @@ Required MATLAB Toolboxes:
 - Deep Learning Toolbox
 - Fuzzy Logic Toolbox
 - Statistics and Machine Learning Toolbox
+
+### Additional Dependencies
+
+The implementation requires the following MATLAB toolboxes:
+
+* Deep Learning Toolbox
+* Fuzzy Logic Toolbox
+* Statistics and Machine Learning Toolbox
+* Optimization Toolbox (for Bayesian optimization)
+
+No external Python packages are required.
 
 ---
 
@@ -152,6 +180,16 @@ The framework produces:
 - Real-time switching visualization
 
 ---
+## Reproducibility
+
+To reproduce the results reported in the manuscript:
+
+1. Load the dataset `newinput_1000.xlsx`.
+2. Execute `AONRFS.m` for feature relevance analysis.
+3. Run `PIML_THD.m` to train and evaluate the THD prediction model.
+4. Execute `BOANFIS.m` to generate adaptive control rules.
+5. Run `RealTime_FilterSwitch_ANFIS.m` to perform filter switching simulation and visualization.
+6. Compare the generated outputs with the figures and tables reported in the manuscript.
 
 ## Citation
 
